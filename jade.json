@@ -1,0 +1,16 @@
+{
+  "objects": [
+    {
+      "parent": null,
+      "name": "Maison",
+      "id": "maison",
+      "icon": "home.png"
+    },
+    {
+      "parent": "maison",
+      "name": "Salon",
+      "id": "salon",
+      "icon": null
+    }
+  ]
+}

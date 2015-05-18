@@ -19,23 +19,15 @@ app.use(bodyParser.json());
 //Routes
 var plugins = require('./routes/plugins');
 var introduce = require('./routes/introduce');
-var timeTransport = require('./routes/time-work');
-var hours = require('./routes/hours');
-var meteo = require('./routes/meteo');
-
+var objects = require('./routes/objects');
 
 
 app.use(plugins);
+app.use('/objects', objects);
 app.use(introduce);
-app.use(hours);
-app.use(meteo);
-app.use(timeTransport);
 
 
 app.listen(app.get('port'), function () {
     console.log("Node app is running at localhost:" + app.get('port'));
-
     jade.init();
-
 });
-
