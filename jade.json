@@ -4,13 +4,22 @@
       "parent": null,
       "name": "Maison",
       "id": "maison",
-      "icon": "home.png"
+      "icon": "home.png",
+      "type": 0
     },
     {
       "parent": "maison",
       "name": "Salon",
       "id": "salon",
-      "icon": null
+      "icon": null,
+      "type": 0
+    },
+    {
+      "parent": "salon",
+      "name": "Lumière salon",
+      "id": "lumiere-salon",
+      "icon": null,
+      "type": 1
     }
   ]
 }

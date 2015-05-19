@@ -1,0 +1,19 @@
+{
+  "types": [
+    {
+      "id": "room",
+      "name": "Pièce",
+      "icon": ""
+    },
+    {
+      "id": "lighting",
+      "name": "Eclairage",
+      "icon": ""
+    },
+    {
+      "id": "interrupteur",
+      "name": "Interrupteur",
+      "icon": ""
+    }
+  ]
+}

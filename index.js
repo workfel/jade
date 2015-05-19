@@ -20,10 +20,12 @@ app.use(bodyParser.json());
 var plugins = require('./routes/plugins');
 var introduce = require('./routes/introduce');
 var objects = require('./routes/objects');
+var objectsType = require('./routes/objects-type');
 
 
 app.use(plugins);
 app.use('/objects', objects);
+app.use('/objects-type', objectsType);
 app.use(introduce);
 
 

@@ -25,9 +25,10 @@ exports.addObject = function (objectModel, callback) {
     }
 };
 
-function _addObject(objectModel) {
-    _object.push(objectModel);
-}
+exports.getById = function (objectId) {
+    return _object.find({id: objectId});
+};
+
 
 exports.removeById = function (objectID) {
     _object.remove({id: objectID});
@@ -37,3 +38,8 @@ exports.ifExists = function (objectID) {
     var object = _object.find({id: objectID});
     return object;
 };
+
+
+function _addObject(objectModel) {
+    _object.push(objectModel);
+}
