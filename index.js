@@ -21,11 +21,13 @@ var plugins = require('./routes/plugins');
 var introduce = require('./routes/introduce');
 var objects = require('./routes/objects');
 var objectsType = require('./routes/objects-type');
+var widgets = require('./routes/widgets');
 
 
-app.use(plugins);
+app.use('/plugin', plugins);
 app.use('/objects', objects);
 app.use('/objects-type', objectsType);
+app.use('/widgets', widgets);
 app.use(introduce);
 
 

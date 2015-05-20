@@ -1,0 +1,10 @@
+{
+  "name": "meteo",
+  "params": {
+    "ville": {
+      "type": "string",
+      "optional": true,
+      "description": "La ville ou village dont vous souhaitez connaitre la météo"
+    }
+  }
+}

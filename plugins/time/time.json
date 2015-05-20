@@ -1,0 +1,10 @@
+{
+  "name": "time",
+  "params": {
+    "city": {
+      "type": "string",
+      "optional": true,
+      "description": "L'heure de la ville"
+    }
+  }
+}

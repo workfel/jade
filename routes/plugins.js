@@ -8,9 +8,14 @@ var jade = require('../jade');
 var speak = require('../lib/speak');
 var router = require('express').Router();
 var winston = require('winston');
+var pluginCtrl = require('../controllers/plugins-controller');
+
+router.get('/', function (req, res) {
+    res.json(pluginCtrl.getLocalPlugins());
+});
 
 
-router.post('/plugin/:name', function (req, res) {
+router.post('/:name', function (req, res) {
     var pluginName = req.params.name;
 
 
@@ -37,7 +42,7 @@ router.post('/plugin/:name', function (req, res) {
 
 });
 
-router.get('/plugin/:name', function (req, res) {
+router.get('/:name', function (req, res) {
     var pluginName = req.params.name;
 
     var plugin = jade.getPlugin(pluginName);

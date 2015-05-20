@@ -5,9 +5,9 @@
  * Created by johan on 18/05/2015.
  */
 var lowDb = require('lowdb');
-var db = lowDb('jade-widget.json')
+var db = lowDb('jade-widgets.json')
 
-var _widgets = db('widget');
+var _widgets = db('widgets');
 
 exports.list = function (callback) {
     callback(null, _widgets);
@@ -32,8 +32,12 @@ exports.getById = function (objectId) {
 };
 
 
-exports.removeById = function (objectID) {
+exports.removeById = function (objectID, callback) {
     _widgets.remove({id: objectID});
+
+    if (callback) {
+        callback(null, 1);
+    }
 };
 
 exports.ifExists = function (objectID) {

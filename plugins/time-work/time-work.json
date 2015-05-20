@@ -1,0 +1,13 @@
+{
+  "name": "time-work",
+  "params": {
+    "begin": {
+      "type": "string",
+      "description": "Le point de départ"
+    },
+    "end": {
+      "type": "string",
+      "description": "L'adresse du travail"
+    }
+  }
+}

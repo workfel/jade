@@ -1,0 +1,11 @@
+{
+  "widgets": [
+    {
+      "id": "meteo-toulouse",
+      "name": "Météo à toulouse",
+      "icon": "",
+      "plugin": "meteo",
+      "params": "toulouse"
+    }
+  ]
+}
