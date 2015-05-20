@@ -22,12 +22,14 @@ var introduce = require('./routes/introduce');
 var objects = require('./routes/objects');
 var objectsType = require('./routes/objects-type');
 var widgets = require('./routes/widgets');
+var resources= require('./routes/resources');
 
 
 app.use('/plugin', plugins);
 app.use('/objects', objects);
 app.use('/objects-type', objectsType);
 app.use('/widgets', widgets);
+app.use('/resources', resources);
 app.use(introduce);
 
 

@@ -4,7 +4,7 @@
 var router = require('express').Router();
 var controller = require('../jade/widget-controller');
 
-router.post('/', function (req, res) {
+router.post('/add', function (req, res) {
 
     var objectModel = req.body;
     controller.add(objectModel, function (err, reponse) {

@@ -10,13 +10,17 @@
         .module('jadeApp')
         .service('PluginsService', PluginsService);
 
-    PluginsService.$inject = [];
+    PluginsService.$inject = ['$http'];
 
-    function PluginsService() {
+    function PluginsService($http) {
 
 
-        this.getLocalPlugins = function () {
-            
+        this.getLocalPlugins = function (callback) {
+            $http.get('/plugin').success(function (data, status) {
+                callback(null, data);
+            }).error(function (data, status) {
+
+            });
         };
     }
 })();

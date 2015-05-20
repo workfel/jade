@@ -3,13 +3,21 @@
  */
 exports.action = function (data, callback, config) {
 
+    var begin = '90 Boulevard pierre et marie curie 31200 Toulouse';
+
+    var end = '5 route de Toulouse, Cornebarrieu';
+    if (data.begin)
+        begin = data.begin;
+    if (data.end) {
+        end = data.end;
+    }
+
 
     var controller = require('./time-work-controller');
-    controller.timeWork("90 Boulevard pierre et marie curie 31200 Toulouse",
-        "5 route de Toulouse, Cornebarrieu", function (error, time) {
+    controller.timeWork(begin, end, function (error, time) {
 
-            // Callback with TTS
-            callback({'tts': time});
-        });
+        // Callback with TTS
+        callback({'tts': time});
+    });
 
 };

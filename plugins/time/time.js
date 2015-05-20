@@ -3,6 +3,9 @@
  */
 exports.action = function (data, callback, config) {
 
+
+
+
     var date = new Date();
 
     var text = 'il est ' + date.getHours() + ' heure ';

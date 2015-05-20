@@ -4,12 +4,12 @@
 exports.action = function (data, callback, config) {
 
     var meteoController = require('./meteo-controller');
-    var ville = 'Toulouse';
-    if (data.ville)
-        ville = data.ville;
+    var city = 'Toulouse';
+    if (data.city)
+        city = data.city;
 
 
-    meteoController.getMeteoTomorrow(ville, function (tts) {
+    meteoController.getMeteoTomorrow(city, function (tts) {
         callback({'tts': tts});
     });
 };

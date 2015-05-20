@@ -1,11 +1,31 @@
 {
   "widgets": [
     {
-      "id": "meteo-toulouse",
-      "name": "Météo à toulouse",
-      "icon": "",
+      "params": {
+        "city": "Paris"
+      },
+      "name": "Météo Paris",
       "plugin": "meteo",
-      "params": "toulouse"
+      "icon": "font",
+      "id": "meteo-paris"
+    },
+    {
+      "params": {
+        "city": "New-York"
+      },
+      "plugin": "time",
+      "name": "Heure à New York",
+      "icon": "clock-o",
+      "id": "heure-a-new-york"
+    },
+    {
+      "params": {
+        "begin": "Belmont sur rance 12370",
+        "end": "5 routes de Toulouse, Cornebarrieu"
+      },
+      "name": "Belmont -TAFF",
+      "plugin": "time-work",
+      "id": "belmont-taff"
     }
   ]
 }

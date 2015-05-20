@@ -1,0 +1,74 @@
+<div ng-controller="WidgetsAddCtrl" layout="row">
+
+
+    <!-- Gauche -->
+    <div flex>
+        <h1 class="md-display-2">Create a widget</h1>
+
+
+        <div layout="column" layout-align="center">
+
+            <h4>{{'chooseNamePlugin' | translate}}</h4>
+            <md-input-container>
+                <label>{{ 'nameOfPlugin'}}</label>
+                <input ng-model="widgetCreator.name" type="text">
+            </md-input-container>
+            <p>{{ 'selectRWidget' | translate}}</p>
+
+            <md-select placeholder="Pick" ng-model="pluginModel" ng-change="onChangePlugin(pluginModel)">
+                <md-option value="{{localPlugin}}" ng-repeat="localPlugin in localPlugins">{{localPlugin.name}}
+                </md-option>
+            </md-select>
+
+
+            <p>{{ 'descriptionPlugin' | translate}}</p>
+            {{pluginSelected.description}}
+
+            <div flex ng-repeat="param in pluginSelected.params">
+                <md-input-container>
+                    <label>{{param.description}}</label>
+                    <input ng-model="widgetCreator.params[param.name]" type="{{param.type}}">
+                </md-input-container>
+
+
+            </div>
+
+
+            <md-button ng-click="onShowAllIcon()">{{'selectIcon' | translate}}</md-button>
+
+            <i class="fa fa-{{widgetCreator.icon}}"></i>
+
+
+            <!-- Valid Widget -->
+            <md-button ng-click="onValidWidget()">{{'send' | translate}}</md-button>
+
+            {{widgetCreator}}
+
+            <!-- SideNave selector icon -->
+            <md-sidenav md-component-id="right" class="md-sidenav-right">
+                <div layout="column" layout-align="center center">
+                    <h2>{{'selectIcon' | translate}}</h2>
+                    <md-divider></md-divider>
+
+                    <md-progress-circular class="md-accent" md-mode="indeterminate"
+                                          ng-if="!icons"></md-progress-circular>
+
+                    <div layout="row" layout-wrap layout-margin>
+                        <i ng-repeat="icon in icons" class="fa fa-{{icon}}" layout-margin
+                           ng-click="onIconChoosed(icon)"></i>
+                    </div>
+
+                </div>
+            </md-sidenav>
+            <!-- SideNave selector icon -->
+
+        </div>
+
+
+    </div>
+
+    <!-- Right -->
+    <div flex>
+
+    </div>
+</div>

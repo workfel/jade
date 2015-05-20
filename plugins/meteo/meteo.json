@@ -1,10 +1,12 @@
 {
   "name": "meteo",
-  "params": {
-    "ville": {
+  "params": [
+    {
+      "name": "city",
       "type": "string",
       "optional": true,
       "description": "La ville ou village dont vous souhaitez connaitre la météo"
     }
-  }
+  ],
+  "description": "Permet de vous donner la météo du lendemain de votre ville"
 }

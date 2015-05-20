@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="resources/font-awesome/css/font-awesome.css">
     <meta name="viewport" content="initial-scale=1"/>
 </head>
 <body layout="column">
@@ -21,6 +22,7 @@
 
             <ul>
                 <li ng-repeat="menu in menus">
+
                     <md-button ng-click="onGoTo(menu)">{{menu.name}}</md-button>
                 </li>
             </ul>
@@ -30,9 +32,9 @@
     <div layout="column" flex id="content">
 
 
-        <div ng-view>
+        <ng-view>
 
-        </div>
+        </ng-view>
         <!--<md-content layout="column" flex class="md-padding" ng-include="pageSelected.url">-->
 
         <!--</md-content>-->
@@ -45,6 +47,8 @@
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-route/angular-route.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+<script src="bower_components/angular-slugify/angular-slugify.js"></script>
 
 <script src="app/app.js"></script>
 
@@ -57,5 +61,22 @@
 <script src="app/sidebar/sidebar-controller.js"></script>
 <script src="app/sidebar/sidebar-service.js"></script>
 <!-- /Sidebar -->
+
+<!-- Plugins-->
+<script src="app/utils/utils-service.js"></script>
+<!-- /Plugins-->
+
+<!-- Plugins-->
+<script src="app/plugins/plugins-service.js"></script>
+<!-- /Plugins-->
+
+
+<!-- Widget -->
+<script src="app/widgets/widgets-service.js"></script>
+<script src="app/widgets/widgets-controller.js"></script>
+<!-- Add-->
+<script src="app/widgets/add/widgets-add-service.js"></script>
+<script src="app/widgets/add/widgets-add-controller.js"></script>
+<!-- /Widget-->
 </body>
 </html>
