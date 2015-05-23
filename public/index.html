@@ -78,5 +78,14 @@
 <script src="app/widgets/views/add/widgets-add-service.js"></script>
 <script src="app/widgets/views/add/widgets-add-controller.js"></script>
 <!-- /Widget-->
+
+<script src="lib/socket-io/socket-io.js"></script>
+<!--<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>-->
+<script>
+    var socket = io();
+    socket.on('connect', function(){});
+    socket.on('event', function(data){});
+    socket.on('disconnect', function(){});
+</script>
 </body>
 </html>
