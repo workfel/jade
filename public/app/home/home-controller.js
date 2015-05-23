@@ -7,13 +7,13 @@
         .module('jadeApp')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['$scope', '$http'];
+    HomeCtrl.$inject = ['$scope', '$http', 'WidgetsService'];
 
-    function HomeCtrl($scope, $http) {
+    function HomeCtrl($scope, $http, WidgetsService) {
 
 
         function _init() {
-
+            WidgetsService.getWidgetsActive(_onFindWidgetsActive)
 
         }
 
@@ -24,6 +24,15 @@
         $scope.meteoClicked = function () {
             $http.post('http://localhost:5000/plugin/meteo', {ville: "Toulouse"});
         };
+
+
+        function _onFindWidgetsActive(err, widgets) {
+            if (err) {
+                console.log(err);
+            } else {
+                $scope.widgets = widgets;
+            }
+        }
 
         _init();
     }

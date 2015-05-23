@@ -7,4 +7,22 @@
     <button class="md-fab md-button md-default-theme" aria-label="Méteo demain" ng-click="meteoClicked()">
         Météo
     </button>
+
+    <md-card ng-repeat="widget in widgets" class="md-primary"  layout-align="center center">
+        <!--<img ng-src="{{widget.icon}}" class="md-card-image" alt="Washed Out">-->
+
+        <md-card-content>
+            <i class="fa fa-{{widget.icon}}"></i>
+
+            <h2 class="md-title">{{widget.name}}</h2>
+
+            <p>
+                {{widget.name}}
+            </p>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="end center">
+            <md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>
+        </div>
+    </md-card>
 </md-content>

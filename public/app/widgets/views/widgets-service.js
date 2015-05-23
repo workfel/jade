@@ -19,10 +19,18 @@
             }).error(function (data, status) {
                 callback(data);
             });
-        }
+        };
+
+        this.getWidgetsActive = function (callback) {
+            $http.get('/widgets/active').success(function (data, status) {
+                callback(null, data);
+            }).error(function (data, status) {
+                callback(data);
+            });
+        };
 
         this.launchPluginWidget = function (widget) {
-            $http.post('plugin/'+ widget.plugin, widget.params);
+            $http.post('plugin/' + widget.plugin, widget.params);
         }
 
     }

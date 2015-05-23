@@ -4,6 +4,16 @@
 var router = require('express').Router();
 var controller = require('../jade/widget-controller');
 
+
+router.get('/active', function (req, res) {
+
+    controller.findActive(function (err, response) {
+        res.send(response);
+    })
+
+
+});
+
 router.post('/add', function (req, res) {
 
     var objectModel = req.body;

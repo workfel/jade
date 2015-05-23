@@ -1,31 +1,37 @@
 {
   "widgets": [
     {
+      "active": true,
       "params": {
         "city": "Paris"
       },
       "name": "Météo Paris",
       "plugin": "meteo",
       "icon": "font",
-      "id": "meteo-paris"
+      "id": "meteo-paris",
+      "color": "#2abcd1"
     },
     {
+      "active": false,
       "params": {
         "city": "New-York"
       },
       "plugin": "time",
       "name": "Heure à New York",
       "icon": "clock-o",
-      "id": "heure-a-new-york"
+      "id": "heure-a-new-york",
+      "color": "#2abcd1"
     },
     {
+      "active": true,
       "params": {
         "begin": "Belmont sur rance 12370",
         "end": "5 routes de Toulouse, Cornebarrieu"
       },
       "name": "Belmont -TAFF",
       "plugin": "time-work",
-      "id": "belmont-taff"
+      "id": "belmont-taff",
+      "color": ""
     }
   ]
 }

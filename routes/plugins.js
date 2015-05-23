@@ -23,6 +23,9 @@ router.post('/:name', function (req, res) {
 
     var plugin = jade.getPlugin(pluginName);
 
+    console.log('plugin : ' + pluginName);
+    console.log('params : ' + JSON.stringify(req.body));
+
     if (!plugin) {
         winston.error('Error in load plugin :' + pluginName);
         res.send(400);
@@ -46,6 +49,9 @@ router.get('/:name', function (req, res) {
     var pluginName = req.params.name;
 
     var plugin = jade.getPlugin(pluginName);
+
+    console.log('plugin : ' + pluginName);
+    console.log('params : ' + JSON.stringify(req.body));
 
     if (!plugin) {
         winston.error('Error in load plugin :' + pluginName);

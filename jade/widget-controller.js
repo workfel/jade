@@ -27,6 +27,13 @@ exports.add = function (widgetModel, callback) {
     }
 };
 
+
+exports.findActive = function (callback) {
+    var actives = _widgets.chain().where({active: true});
+
+    callback(null, actives);
+}
+
 exports.getById = function (objectId) {
     return _widgets.find({id: objectId});
 };

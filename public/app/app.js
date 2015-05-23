@@ -12,10 +12,10 @@
                         templateUrl: 'app/home/home.html'
                     }).
                     when('/widgets/', {
-                        templateUrl: 'app/widgets/widgets.html'
+                        templateUrl: 'app/widgets/views/widgets.html'
                     }).
                     when('/widgets/add', {
-                        templateUrl: 'app/widgets/add/widgets-add.html'
+                        templateUrl: 'app/widgets/views/add/widgets-add.html'
                     }).
                     otherwise({
                         redirectTo: '/home'

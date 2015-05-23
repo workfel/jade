@@ -18,7 +18,7 @@ var _findConfPlugins = function (dir, callback) {
             fs.stat(file, function (err, stat) {
                 if (stat && stat.isDirectory()) {
                     //file is the path of plugin folder
-                    var pathConfPlugin = file + "\\" + fileName + ".json";
+                    var pathConfPlugin = file + "/" + fileName + ".json";
                     fs.readFile(pathConfPlugin, {encoding: 'utf8'}, function (err, data) {
                         if (err) throw err;
                         //console.log(data);

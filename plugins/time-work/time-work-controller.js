@@ -29,15 +29,18 @@ function secondsToTime(secs) {
     var divisor_for_minutes = secs % (60 * 60);
     var minutes = Math.floor(divisor_for_minutes / 60);
 
-    var divisor_for_seconds = divisor_for_minutes % 60;
-    var seconds = Math.ceil(divisor_for_seconds);
 
-    var obj = {
-        "h": hours,
-        "m": minutes,
-        "s": seconds
-    };
-    return hours + " heures et " + minutes + ' minutes ';
+    var str = '';
+
+    if (hours > 0) {
+        str = hours + ' heures ';
+    }
+    if (minutes > 0) {
+        str += minutes + ' minutes';
+    }
+
+
+    return str;
 }
 
 exports.timeWork = _tempsItineraire;
