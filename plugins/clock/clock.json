@@ -1,0 +1,17 @@
+{
+  "name": "clock",
+  "author": "Pujol Johan",
+  "params": [
+    {
+      "name": "tts",
+      "type": "string",
+      "description": "La phrase du réveil"
+    },
+    {
+      "name": "hours",
+      "type": "string",
+      "description": "L'heure ou vous souhaitez vous lever"
+    }
+  ],
+  "description": "Permet de régler le reveil. JADE vous diras la phrase que vous souhaitez"
+}

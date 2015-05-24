@@ -17,7 +17,22 @@
                 {
                     name: 'Widgets',
                     icon: '',
-                    url: '/widgets/add'
+                    url: '/widgets',
+                    child: [{
+                        name: 'Add Widgets',
+                        icon: '',
+                        url: '/widgets/add'
+                    }]
+                },
+                {
+                    name: 'Objects',
+                    icon: '',
+                    url: '/objects',
+                    child: [{
+                        name: 'Add Objects',
+                        icon: '',
+                        url: '/objects/add'
+                    }]
                 }
             ]
         };

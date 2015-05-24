@@ -7,9 +7,9 @@
       },
       "name": "Météo Paris",
       "plugin": "meteo",
-      "icon": "font",
+      "icon": "cloud",
       "id": "meteo-paris",
-      "color": "#2abcd1"
+      "color": "#0288D1"
     },
     {
       "active": false,

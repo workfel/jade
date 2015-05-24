@@ -49,7 +49,7 @@
 
         $scope.onIconChoosed = function (icon) {
             $scope.widgetCreator.icon = icon;
-            $mdSidenav('right').toggle();
+            //$mdSidenav('right').toggle();
         };
 
         function _initWidgetCreator() {

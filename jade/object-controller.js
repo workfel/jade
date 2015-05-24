@@ -3,12 +3,28 @@
  */
 var lowDb = require('lowdb');
 var db = lowDb('jade.json')
-
+var objTypeCtrl = require('./object-type-controller');
 var _object = db('objects');
 
-exports.listObjects = function (callback) {
-    callback(null, _object);
+exports.listObjects = function (listChild, callback) {
+
+    if (listChild) {
+        var obj = [];
+
+        for (var i = 0; i < _object.toArray().length; i++) {
+            var object = _object.toArray()[i];
+            var type = objTypeCtrl.getById(object.type);
+            object.type = type;
+            obj.push(object);
+        }
+
+        callback(null, obj);
+    } else {
+        callback(null, _object);
+    }
+
 };
+
 
 exports.addObject = function (objectModel, callback) {
 

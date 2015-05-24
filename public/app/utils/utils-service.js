@@ -21,5 +21,7 @@
         this.slug = function (str) {
             return Slug.slugify(str);
         }
+
+
     }
 })();

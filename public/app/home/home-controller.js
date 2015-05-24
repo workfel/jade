@@ -17,15 +17,6 @@
 
         }
 
-        $scope.workClicked = function () {
-            $http.post('http://localhost:5000/plugin/time-work');
-        };
-
-        $scope.meteoClicked = function () {
-            $http.post('http://localhost:5000/plugin/meteo', {ville: "Toulouse"});
-        };
-
-
         function _onFindWidgetsActive(err, widgets) {
             if (err) {
                 console.log(err);

@@ -5,21 +5,69 @@
       "name": "Maison",
       "id": "maison",
       "icon": "home.png",
-      "type": 0
+      "type": {
+        "id": "room",
+        "name": "Pièce",
+        "icon": ""
+      }
     },
     {
       "parent": "maison",
       "name": "Salon",
       "id": "salon",
       "icon": null,
-      "type": 0
+      "type": {
+        "id": "room",
+        "name": "Pièce",
+        "icon": ""
+      }
     },
     {
       "parent": "salon",
       "name": "Lumière salon",
       "id": "lumiere-salon",
       "icon": null,
-      "type": 1
+      "type": {
+        "id": "lighting",
+        "name": "Eclairage",
+        "icon": ""
+      }
+    },
+    {
+      "parent": "salon",
+      "name": "Lumière télévision",
+      "icon": "cog",
+      "id": "lumiere-television"
+    },
+    {
+      "parent": "maison",
+      "name": "Cusinie",
+      "icon": "cc-paypal",
+      "id": "cusinie"
+    },
+    {
+      "name": "Lumière Cuisine",
+      "parent": "cusinie",
+      "icon": "truck",
+      "id": "lumiere-cuisine"
+    },
+    {
+      "parent": "cusinie",
+      "name": "Micro onde",
+      "icon": "plus-circle",
+      "id": "micro-onde"
+    },
+    {
+      "parent": "maison",
+      "name": "Rez de chaussé",
+      "icon": "th-list",
+      "id": "rez-de-chausse"
+    },
+    {
+      "name": "Premier étage",
+      "parent": "maison",
+      "icon": "line-chart",
+      "id": "premier-etage"
     }
   ]
 }

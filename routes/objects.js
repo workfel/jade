@@ -4,7 +4,7 @@
 var router = require('express').Router();
 var controller = require('../jade/object-controller');
 
-router.post('/', function (req, res) {
+router.post('/add', function (req, res) {
 
     var objectModel = req.body;
     controller.addObject(objectModel, function (err, reponse) {
@@ -14,7 +14,9 @@ router.post('/', function (req, res) {
 
 
 router.get('/', function (req, res) {
-    controller.listObjects(function (err, response) {
+
+
+    controller.listObjects(req.query.child, function (err, response) {
 
         res.json(response);
     });

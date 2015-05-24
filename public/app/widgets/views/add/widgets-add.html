@@ -3,10 +3,14 @@
 
     <!-- Gauche -->
     <div flex>
+
+
         <h1 class="md-display-2">Create a widget</h1>
 
 
         <div layout="column" layout-align="center">
+
+
 
             <h4>{{'chooseNamePlugin' | translate}}</h4>
             <md-input-container>
@@ -34,33 +38,19 @@
             </div>
 
 
+
             <md-button ng-click="onShowAllIcon()">{{'selectIcon' | translate}}</md-button>
 
             <i class="fa fa-{{widgetCreator.icon}}"></i>
 
+
+            <jade-icons iconselected="onIconChoosed(icon)"></jade-icons>
 
             <!-- Valid Widget -->
             <md-button ng-click="onValidWidget()">{{'send' | translate}}</md-button>
 
             {{widgetCreator}}
 
-            <!-- SideNave selector icon -->
-            <md-sidenav md-component-id="right" class="md-sidenav-right">
-                <div layout="column" layout-align="center center">
-                    <h2>{{'selectIcon' | translate}}</h2>
-                    <md-divider></md-divider>
-
-                    <md-progress-circular class="md-accent" md-mode="indeterminate"
-                                          ng-if="!icons"></md-progress-circular>
-
-                    <div layout="row" layout-wrap layout-margin>
-                        <i ng-repeat="icon in icons" class="fa fa-{{icon}}" layout-margin
-                           ng-click="onIconChoosed(icon)"></i>
-                    </div>
-
-                </div>
-            </md-sidenav>
-            <!-- SideNave selector icon -->
 
         </div>
 

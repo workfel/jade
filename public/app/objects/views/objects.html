@@ -1,0 +1,7 @@
+<div ng-controller="WidgetsCtrl">
+
+    <button class="md-button md-default-theme" aria-label="" ng-click="onWidgetClicked(widget)"
+            ng-repeat="widget in widgets">
+        {{widget.name}} <i class="fa fa-{{widget.icon}}"></i>
+    </button>
+</div>

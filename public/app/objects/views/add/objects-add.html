@@ -1,0 +1,59 @@
+<div ng-controller="ObjectsAddCtrl" layout="row">
+
+
+    <!-- Gauche -->
+    <div flex>
+        <h1 class="md-display-2">Create a Object</h1>
+
+
+        <div layout="column" layout-align="center">
+
+            <h4>{{'chooseName' | translate}}</h4>
+            <md-input-container>
+                <label>{{ 'nameOfObject'}}</label>
+                <input ng-model="objectCreator.name" type="text">
+            </md-input-container>
+            <p>{{ 'selectParent' | translate}}</p>
+
+            <md-select placeholder="Pick" ng-model="objectCreator.parent">
+                <md-option value="{{object.id}}" ng-repeat="object in objects">{{object.name}}
+                </md-option>
+            </md-select>
+
+
+            <jade-icons iconselected="onIconSelected(icon)"></jade-icons>
+
+
+            <i class="fa fa-{{objectCreator.icon}}"></i>
+
+
+            <!-- Valid Widget -->
+            <md-button ng-click="onValid()">{{'send' | translate}}</md-button>
+
+            {{widgetCreator}}
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Right -->
+    <div flex>
+
+
+        <!--<jade-tree item="treeObjects"></jade-tree>-->
+        <li ng-repeat="parentCategory in treeObjects"
+            ng-include="'categoryTree'"
+            ng-init="item=parentCategory"></li>
+    </div>
+</div>
+
+
+<script type="text/ng-template" id="categoryTree">
+    <i class="fa fa-{{item.icon}}"></i> {{item.name}}
+    <ul ng-if="item.child">
+        <li ng-repeat="item in item.child" ng-include="'categoryTree'">
+        </li>
+    </ul>
+</script>

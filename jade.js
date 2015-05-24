@@ -7,6 +7,7 @@ var winston = require('winston');
 var localPlugins = {};
 var speak = require('./lib/speak');
 var pluginCtrl = require('./controllers/plugins-controller');
+var mailCtrl = require('./controllers/mail-controller');
 
 function _loadPlugin(path) {
 
@@ -118,7 +119,7 @@ exports.init = function () {
     //var path = pwd.join(__dirname, 'plugins');
     //_loadPlugin(path);
     pluginCtrl.init();
-
+    mailCtrl.init();
 
     this.speak('Bonjour je suis praite');
 };
