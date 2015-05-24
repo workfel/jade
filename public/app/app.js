@@ -14,6 +14,9 @@
                     when('/home', {
                         templateUrl: 'app/home/home.html'
                     }).
+                    when('/plugins/', {
+                        templateUrl: 'app/plugins/views/plugins.html'
+                    }).
                     when('/objects/', {
                         templateUrl: 'app/objects/views/objects.html'
                     }).

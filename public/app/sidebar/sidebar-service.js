@@ -25,6 +25,12 @@
                     }]
                 },
                 {
+                    name: 'Plugins',
+                    icon: '',
+                    url: '/plugins',
+                    child: []
+                },
+                {
                     name: 'Objects',
                     icon: '',
                     url: '/objects',
