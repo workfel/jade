@@ -24,9 +24,11 @@
         var tmp =
             '<a class="md-primary md-raised md-button md-default-theme widget-content-land" style="background-color: {{widget.color}}"  aria-label="{{widget.name}}" >' +
             '<div layout="row">' +
+            '<span flex="80">' +
             '<i class="fa fa-{{widget.icon}}  fa-3x"></i>' +
             '<span layout-margin>{{widget.name}}</span>' +
-            '<md-switch ng-model="widget.state" aria-label="Etat de la prise" ng-change="onStatusChange()">' +
+            '</span>' +
+            '<md-switch ng-model="widget.state" aria-label="Etat de la prise" ng-change="onStatusChange()" layout-align="end center">' +
             '</md-switch>' +
             '</div>'
 

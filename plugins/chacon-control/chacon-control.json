@@ -1,17 +1,7 @@
 {
   "name": "chacon-control",
   "params": [
-    {
-      "name": "begin",
-      "type": "string",
-      "description": "Le point de départ"
-    },
-    {
-      "name": "end",
-      "type": "string",
-      "description": "L'adresse du travail"
-    }
   ],
-  "description": "Permet de vous donner le temps du trajet en live de votre logement à votre travail",
-  "templateUrl":"chacon-control.html"
+  "description": "Permet de controler un prise chacon",
+  "templateUrl": "chacon-control.html"
 }

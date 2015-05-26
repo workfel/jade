@@ -1,12 +1,14 @@
-<md-content ng-controller="HomeCtrl" layout="row" flex>
+<div ng-controller="HomeCtrl">
 
 
-    <md-content class="md-default-theme">
-        <jade-widget ng-repeat="widget in widgets" widget="widget"></jade-widget>
-    </md-content>
+    <!--<md-content class="md-default-theme"  layout-wrap>-->
 
-    <md-content class="md-default-theme">
-        <jade-widget-command ng-repeat="command in commands" widget="command"></jade-widget-command>
-    </md-content>
+    <div layout="row" layout-wrap layout-margin >
+        <jade-widget ng-repeat="widget in widgets" widget="widget" flex="33"></jade-widget>
 
-</md-content>
+        <jade-widget-command ng-repeat="command in commands" widget="command" flex="33"></jade-widget-command>
+    </div>
+
+    <!--</md-content>-->
+
+</div>

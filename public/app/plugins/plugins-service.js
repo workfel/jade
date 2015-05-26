@@ -32,5 +32,13 @@
 
             });
         };
+
+        /**
+         * return the template who explain the plugin
+         * no specify a template for this plugin
+         */
+        this.getTemplateUnexist = function(){
+            return '<h1>No template Exist for this plugin</h1>';
+        }
     }
 })();

@@ -30,10 +30,15 @@
         $scope.onPluginClicked = function (plugin) {
             $scope.pluginSelected = plugin;
 
+
             if (angular.isDefined(plugin.templateUrl)) {
+                $scope.templateNoExist = null;
                 PluginsService.getTemplate(plugin.name, function (err, htmlTemplate) {
                     $scope.template = htmlTemplate;
                 });
+            } else {
+                $scope.template = null;
+                $scope.templateNoExist = PluginsService.getTemplateUnexist();
             }
         };
 
