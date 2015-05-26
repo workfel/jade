@@ -6,6 +6,31 @@ var path = require('path');
 var mLocalPlugins = {};
 
 
+function _getFolderPlugin() {
+    return 'plugins/';
+}
+
+exports.getContentTemplateUrl = function (pluginName,callback) {
+
+    this.getPluginByName(pluginName, function (err, plugin) {
+
+        if (plugin.templateUrl) {
+
+            var path = _getFolderPlugin() + plugin.name + "/" + plugin.templateUrl;
+
+            fs.readFile(path, {encoding: 'utf8'}, function (err, data) {
+                if (err) throw err;
+
+                callback(null, data);
+            });
+        } else {
+            callback(null, '');
+        }
+    });
+
+
+};
+
 var _findConfPlugins = function (dir, callback) {
     var results = [];
     fs.readdir(dir, function (err, list) {
@@ -38,9 +63,18 @@ exports.init = function () {
     this.reloadPlugins();
 };
 
+exports.getPluginByName = function (name, callback) {
+    var path = _getFolderPlugin() + name + "/" + name + ".json";
+
+    fs.readFile(path, {encoding: 'utf8'}, function (err, data) {
+        if (err) throw err;
+
+        callback(null, JSON.parse(data));
+    });
+};
 
 exports.reloadPlugins = function () {
-    _findConfPlugins('plugins/', function (err, result) {
+    _findConfPlugins(_getFolderPlugin(), function (err, result) {
         mLocalPlugins = result;
     })
 };

@@ -8,6 +8,22 @@ var localPlugins = {};
 var speak = require('./lib/speak');
 var pluginCtrl = require('./controllers/plugins-controller');
 var mailCtrl = require('./controllers/mail-controller');
+var jadeIo = require('./jade-socket');
+//var jadeHttp = require('./jade-http');
+
+
+exports.io = jadeIo;
+//
+
+var _http = null;
+
+exports.http = function () {
+    return _http;
+};
+
+exports.setHttp = function (http) {
+    _http = http;
+};
 
 function _loadPlugin(path) {
 
@@ -121,7 +137,11 @@ exports.init = function () {
     pluginCtrl.init();
     mailCtrl.init();
 
+    jadeIo.init();
+
     this.speak('Bonjour je suis praite');
+
+
 };
 
 

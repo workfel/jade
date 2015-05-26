@@ -7,17 +7,49 @@
         .module('jadeApp')
         .controller('PluginsCtrl', PluginsCtrl);
 
-    PluginsCtrl.$inject = ['$scope', 'PluginsService'];
+    PluginsCtrl.$inject = ['$scope', 'PluginsService', 'ObjectsService', 'CommandService'];
 
-    function PluginsCtrl($scope, PluginsService) {
+    function PluginsCtrl($scope, PluginsService, ObjectsService, CommandService) {
 
         function _init() {
+            $scope.action = {};
+
             PluginsService.getLocalPlugins(function (err, plugins) {
                 $scope.localPlugins = plugins;
             });
+
+            ObjectsService.getObjects(function (err, objs) {
+                $scope.objects = objs;
+            });
+
+            CommandService.getCommandsType(function (err, command) {
+                $scope.commands = command;
+            })
         }
+
+        $scope.onPluginClicked = function (plugin) {
+            $scope.pluginSelected = plugin;
+
+            if (angular.isDefined(plugin.templateUrl)) {
+                PluginsService.getTemplate(plugin.name, function (err, htmlTemplate) {
+                    $scope.template = htmlTemplate;
+                });
+            }
+        };
+
+        $scope.onComponentTemplateFinished = function () {
+
+            $scope.action.plugin = $scope.pluginSelected.name;
+            //get the object of template plugin
+            $scope.action.data = $scope.data;
+            console.log($scope.action);
+            CommandService.addCommand($scope.action, function (err, response) {
+
+            });
+        };
 
 
         _init();
     }
-})();
+})
+();

@@ -813,6 +813,10 @@
 .fa-bolt:before {
   content: "\f0e7";
 }
+.fa-bolt-active:before {
+  content: "\f0e7";
+  color: #ffff00;
+}
 .fa-sitemap:before {
   content: "\f0e8";
 }
@@ -825,6 +829,10 @@
 }
 .fa-lightbulb-o:before {
   content: "\f0eb";
+}
+.fa-lightbulb-o-active:before {
+  content: "\f0eb";
+  color: #ffff00;
 }
 .fa-exchange:before {
   content: "\f0ec";

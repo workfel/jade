@@ -7,9 +7,9 @@
         .module('jadeApp')
         .service('SidebarService', SidebarService);
 
-    SidebarService.$inject = [];
+    SidebarService.$inject = ['$filter'];
 
-    function SidebarService() {
+    function SidebarService($filter) {
 
 
         this.getMenus = function () {
@@ -23,6 +23,12 @@
                         icon: '',
                         url: '/widgets/add'
                     }]
+                },
+                {
+                    name: $filter('translate')('components'),
+                    icon: '',
+                    url: '/components',
+                    child: []
                 },
                 {
                     name: 'Plugins',

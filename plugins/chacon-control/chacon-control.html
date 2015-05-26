@@ -1,0 +1,23 @@
+<h1>Chacon-control</h1>
+
+<md-input-container>
+    <label>Numéro physique GPIO</label>
+    <input ng-model="data.pinGpio" type="number">
+</md-input-container>
+
+<md-input-container>
+    <label>Id de la télécommande Chacon</label>
+    <input ng-model="data.idTelecomande" type="number">
+</md-input-container>
+
+<md-input-container>
+    <label>Numéro de la prise</label>
+    <input ng-model="data.idPrise" type="number">
+</md-input-container>
+
+<md-switch ng-model="data.state" aria-label="Etat de la prise">
+    Etat de la prise: {{ data.state}}
+</md-switch>
+
+<!--<md-button class="md-raised md-primary" ng-click="onComponentTemplateFinished()">Valider</md-button>-->
+

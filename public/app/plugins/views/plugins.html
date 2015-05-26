@@ -1,7 +1,32 @@
 <div ng-controller="PluginsCtrl">
 
-    <button class="md-button md-default-theme" aria-label="" ng-click="onWidgetClicked(widget)"
-            ng-repeat="widget in localPlugins">
-        {{widget.name}} <i class="fa fa-{{widget.icon}}"></i>
+    <button class="md-button md-default-theme" aria-label="" ng-click="onPluginClicked(plugin)"
+            ng-repeat="plugin in localPlugins">
+        {{plugin.name}} <i class="fa fa-{{plugin.icon}}"></i>
     </button>
+
+    <div compile="template"></div>
+    <div ng-if="template">
+
+
+        <p>Object</p>
+        <md-select placeholder="Object" ng-model="action.object">
+            <md-option value="{{object}}" ng-repeat="object in objects">{{object.name}}
+            </md-option>
+        </md-select>
+
+
+        <p>Type de commandes</p>
+        <md-radio-group ng-model="action.command" class="md-warn">
+            <md-radio-button ng-repeat="command in commands"
+                             ng-value="command">
+                {{ command.name}}
+            </md-radio-button>
+        </md-radio-group>
+
+
+        <md-button class="md-raised md-primary" ng-click="onComponentTemplateFinished()">Valider</md-button>
+    </div>
+
+
 </div>

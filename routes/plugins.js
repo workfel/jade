@@ -9,11 +9,26 @@ var speak = require('../lib/speak');
 var router = require('express').Router();
 var winston = require('winston');
 var pluginCtrl = require('../controllers/plugins-controller');
+var jadeIo = require('../jade-socket');
+var JADE = require('../jade');
 
 router.get('/', function (req, res) {
     res.json(pluginCtrl.getLocalPlugins());
+
 });
 
+
+router.get('/test', function (req, res) {
+    JADE.io.emit('switch-command', false);
+    res.send(200);
+});
+router.get('/template', function (req, res) {
+    var pluginName = req.query.name;
+
+    pluginCtrl.getContentTemplateUrl(pluginName, function (err, result) {
+        res.send(result);
+    })
+});
 
 router.post('/:name', function (req, res) {
     var pluginName = req.params.name;
@@ -34,13 +49,21 @@ router.post('/:name', function (req, res) {
 
     plugin.action(data, function (response) {
 
+
+        if (response.switchCommand) {
+            JADE.io.emit('switch-command', response.switchCommand);
+        }
+
+
         if (response.tts) {
             speak.tts(response.tts);
             res.send(response.tts);
-        } else if (response.display) {
+        }
+
+        if (response.display) {
 
         }
-    });
+    }, JADE);
 
 
 });

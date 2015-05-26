@@ -7,14 +7,23 @@
         .module('jadeApp')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['$scope', '$http', 'WidgetsService'];
+    HomeCtrl.$inject = ['$scope', 'WidgetsService', 'CommandService'];
 
-    function HomeCtrl($scope, $http, WidgetsService) {
+    function HomeCtrl($scope, WidgetsService, CommandService) {
 
 
         function _init() {
-            WidgetsService.getWidgetsActive(_onFindWidgetsActive)
+            WidgetsService.getWidgetsActive(_onFindWidgetsActive);
+            CommandService.getCommands(_onFindCommandsActive)
 
+        }
+
+        function _onFindCommandsActive(err, commands) {
+            if (err) {
+                console.log(err);
+            } else {
+                $scope.commands = commands;
+            }
         }
 
         function _onFindWidgetsActive(err, widgets) {

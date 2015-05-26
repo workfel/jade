@@ -7,6 +7,8 @@
     angular.module('jadeApp', ['ngMaterial', 'ngRoute', 'pascalprecht.translate', 'slugifier',
         'jade.widget.ui',
         'jade.ui.tree',
+        'jade.utils.compiler',
+        'jade.ui.widget.command',
         'jade.ui.icon'])
         .config(['$routeProvider',
             function ($routeProvider) {
@@ -16,6 +18,9 @@
                     }).
                     when('/plugins/', {
                         templateUrl: 'app/plugins/views/plugins.html'
+                    }).
+                    when('/components/add', {
+                        templateUrl: 'app/components/views/add/component.html'
                     }).
                     when('/objects/', {
                         templateUrl: 'app/objects/views/objects.html'
