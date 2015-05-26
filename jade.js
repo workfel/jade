@@ -139,12 +139,20 @@ exports.init = function () {
 
     jadeIo.init();
 
-    this.speak('Bonjour je suis praite');
+    this.speak('Bonjour je suis prète');
 
 
 };
 
+function replaceAll(find, replace, str) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
+
 
 exports.speak = function (text) {
+    console.log('tts before: ' + text);
+    text = replaceAll("é", "ai", text);
+    text = replaceAll("è", "eai", text);
+    console.log('tts after: ' + text);
     speak.tts(text);
 };

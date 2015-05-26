@@ -5,7 +5,7 @@
  * Created by johan on 01/05/2015.
  */
 var jade = require('../jade');
-var speak = require('../lib/speak');
+//var speak = require('../lib/speak');
 var router = require('express').Router();
 var winston = require('winston');
 var pluginCtrl = require('../controllers/plugins-controller');
@@ -50,23 +50,23 @@ router.post('/:name', function (req, res) {
     plugin.action(data, function (response) {
 
 
-        if (response.switchCommand) {
-            JADE.io.emit('switch-command', response.switchCommand);
-        }
-
-
-        if (response.tts) {
-            speak.tts(response.tts);
-            res.send(response.tts);
-        }
-
-        if (response.display) {
-
-        }
+        _actionPluginResponse(res, response);
     }, JADE);
 
 
 });
+
+function _actionPluginResponse(res, response) {
+    if (response.switchCommand) {
+        JADE.io.emit('switch-command', response.switchCommand);
+    }
+    if (response.tts) {
+        JADE.speak(response.tts);
+        res.send(response.tts);
+    } else if (response.display) {
+
+    }
+}
 
 router.get('/:name', function (req, res) {
     var pluginName = req.params.name;
@@ -85,16 +85,12 @@ router.get('/:name', function (req, res) {
     console.log(req.query);
 
     plugin.action(req.query, function (response) {
-
-        if (response.tts) {
-            speak.tts(response.tts);
-            res.send(response.tts);
-        } else if (response.display) {
-
-        }
+        _actionPluginResponse(res, response);
     });
 
 
 });
+
+
 
 module.exports = router;
