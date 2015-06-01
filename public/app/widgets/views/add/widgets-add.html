@@ -47,6 +47,25 @@
 
 
             <!-- Valid Widget -->
+
+            <p>Object</p>
+            <md-select placeholder="Object" ng-model="action.object">
+                <md-option value="{{object}}" ng-repeat="object in objects">{{object.name}}
+                </md-option>
+            </md-select>
+
+
+            <p>Type de commandes</p>
+            <md-radio-group ng-model="action.command" class="md-warn">
+                <md-radio-button ng-repeat="command in commands"
+                                 ng-value="command">
+                    {{ command.name}}
+                </md-radio-button>
+            </md-radio-group>
+
+
+            <!--<md-button class="md-raised md-primary" ng-click="onComponentTemplateFinished()">Valider</md-button>-->
+
             <md-button ng-click="onValidWidget()">{{'send' | translate}}</md-button>
 
             {{widgetCreator}}

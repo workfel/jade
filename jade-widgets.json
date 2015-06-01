@@ -32,6 +32,14 @@
       "plugin": "time-work",
       "id": "belmont-taff",
       "color": ""
+    },
+    {
+      "params": {},
+      "icon": "picture-o",
+      "name": "kiki",
+      "color": "9ACD32",
+      "plugin": "chacon-control",
+      "id": "kiki"
     }
   ]
 }

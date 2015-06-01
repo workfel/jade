@@ -1,6 +1,21 @@
 {
   "name": "chacon-control",
   "params": [
+    {
+      "name": "pinGpio",
+      "type": "number",
+      "description": "La ville ou village dont vous souhaitez connaitre la météo"
+    },
+    {
+      "name": "idTelecomande",
+      "type": "number",
+      "description": "La ville ou village dont vous souhaitez connaitre la météo"
+    },
+    {
+      "name": "idPrise",
+      "type": "number",
+      "description": "La ville ou village dont vous souhaitez connaitre la météo"
+    }
   ],
   "description": "Permet de controler un prise chacon",
   "templateUrl": "chacon-control.html"

@@ -11,7 +11,6 @@ function _getMeteoTomorrow(city, callback) {
 
     request(url, function (error, response, body) {
 
-
         var meteoTxt = _parseApi(city, JSON.parse(body));
 
         callback(meteoTxt);
