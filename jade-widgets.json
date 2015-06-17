@@ -40,6 +40,16 @@
       "color": "9ACD32",
       "plugin": "chacon-control",
       "id": "kiki"
+    },
+    {
+      "params": {
+        "city": "Toulouse"
+      },
+      "icon": "sun-o",
+      "name": "Météo Toulouse",
+      "color": "green",
+      "plugin": "meteo",
+      "id": "meteo-toulouse"
     }
   ]
 }

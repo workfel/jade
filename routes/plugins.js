@@ -65,6 +65,8 @@ function _actionPluginResponse(res, response) {
         res.send(response.tts);
     } else if (response.display) {
 
+    } else {
+        res.send(response);
     }
 }
 
@@ -90,7 +92,6 @@ router.get('/:name', function (req, res) {
 
 
 });
-
 
 
 module.exports = router;
