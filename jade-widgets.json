@@ -50,6 +50,25 @@
       "color": "green",
       "plugin": "meteo",
       "id": "meteo-toulouse"
+    },
+    {
+      "params": {},
+      "icon": "picture-o",
+      "plugin": "time",
+      "name": "heure",
+      "color": "#f28787",
+      "id": "heure"
+    },
+    {
+      "params": {
+        "begin": "90 boulevard pierre et marie curie toulouse",
+        "end": "5 route de toulouse cornebarieu"
+      },
+      "icon": "picture-o",
+      "plugin": "time-work",
+      "name": "Taff travel",
+      "color": "#f28787",
+      "id": "taff-travel"
     }
   ]
 }
